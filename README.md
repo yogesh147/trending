@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+npm install -g create-react-app
+create-react-app trending
+cd .\trending\
+npm start
+
 ## Available Scripts
 
 In the project directory, you can run:
