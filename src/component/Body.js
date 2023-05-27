@@ -7,8 +7,8 @@ import "./Body.css";
 export default function Body() {
    const [isVisible, setVisible] = useState(true);
 
-   const mobileToolTip = "Checkout latest mobiles"
-   const accessoriesToolTip = "Checkout latest accessories"
+   const mobileToolTip = "Checkout latest mobiles";
+   const accessoriesToolTip = "Checkout latest accessories";
 
    const btnToggle = (type) => {
       if ((type === "mobiles") && isVisible) return;
@@ -40,7 +40,7 @@ export default function Body() {
                </Tooltip>
 
                {' '}
-               
+
                <Tooltip content={accessoriesToolTip} direction="right">
                   <Button variant="outline-primary"
                      className={!isVisible ? "Body-selectedBtn" : "Body-unSelectedBtn"}
