@@ -1,15 +1,4 @@
-.h-70{
-    height: 70px;
-}
-
-.h-50{
-    height: 50px;
-}
-
-.border-solid{
-    border-style: solid;
-}
-
-#abc {
-    display: inline;
+.selectedBtn {
+    background-color: #1a73e8;
+    color: white;
 }
