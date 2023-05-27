@@ -1,44 +1,14 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import Tooltip from "./Tooltip";
+import "./Body.css";
 
 export default function Body() {
-
-   const body = {
-      borderBottomColor: "#f5f5f52e",
-      borderBottomStyle: "ridge",
-      height: "144px"
-   };
-
-   const col = {
-      backgroundColor: "white",
-      textAlign: "center",
-      fontWeight: "bolder",
-      fontSize: "-webkit-xxx-large",
-      color: "#000000b5"
-   };
-
-   const col2 = {
-      backgroundColor: "white",
-      textAlign: "center",
-      fontWeight: "bolder",
-      fontSize: "-webkit-xxx-large",
-      color: "#4caf50db",
-      borderBottomColor: "#f5f5f52e",
-      borderBottomStyle: "ridge"
-   };
-
-   const selectedBtn = {
-      backgroundColor: "#1a73e8",
-      color: "white"
-   };
-
-   const unSelectedBtn = {
-      backgroundColor: "white",
-      color: "#1a73e8"
-   };
-
    const [isVisible, setVisible] = useState(true);
+
+   const mobileToolTip = "Checkout latest mobiles"
+   const accessoriesToolTip = "Checkout latest accessories"
 
    const btnToggle = (type) => {
       if ((type === "mobiles") && isVisible) return;
@@ -48,37 +18,40 @@ export default function Body() {
 
    return (
       <Container fluid>
-         
-         <Row style={body}>
-            <Col style={col} sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
+
+         <Row className="Body-Block">
+            <Col className="Body-Col" sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
                Welcome to the
             </Col>
-            <Col style={col2} sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
+            <Col className="Body-Col2" sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
                Mobile Store
             </Col>
          </Row>
 
          <Row>
-            <Col style={col} sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
-
-                  <Button variant="outline-primary"  overlaytrigger="true" 
-                     style={isVisible ? selectedBtn : unSelectedBtn}
+            <Col className="Body-Col" sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
+              
+               <Tooltip content={mobileToolTip} direction="left">
+                  <Button variant="outline-primary"
+                     className={isVisible ? "Body-selectedBtn" : "Body-unSelectedBtn"}
                      onClick={() => btnToggle("mobiles")} >
                      Mobiles
                   </Button>
+               </Tooltip>
 
                {' '}
-               <Button variant="outline-primary"
-                  style={!isVisible ? selectedBtn : unSelectedBtn}
-                  onClick={() => btnToggle("accessories")} >
-                  Accessories
-               </Button>
+               
+               <Tooltip content={accessoriesToolTip} direction="right">
+                  <Button variant="outline-primary"
+                     className={!isVisible ? "Body-selectedBtn" : "Body-unSelectedBtn"}
+                     onClick={() => btnToggle("accessories")} >
+                     Accessories
+                  </Button>
 
+               </Tooltip>
             </Col>
          </Row>
-
       </Container>
    );
-
 
 }

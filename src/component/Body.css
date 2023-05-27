@@ -1,0 +1,33 @@
+.Body-Col {
+    background-color: white;
+    text-align: center;
+    font-weight: bolder;
+    font-size: -webkit-xxx-large;
+    color: #000000b5
+}
+
+.Body-Col2 {
+    background-color: white;
+    text-align: center;
+    font-weight: bolder;
+    font-size: -webkit-xxx-large;
+    color: #4caf50db;
+    border-bottom-color: #f5f5f52e;
+    border-bottom-style: ridge;
+}
+
+.Body-Block {
+    border-bottom-color: #f5f5f52e;
+    border-bottom-style: ridge;
+    height: 144px
+}
+
+.Body-selectedBtn {
+    background-color: #1a73e8;
+    color: white
+}
+
+.Body-unSelectedBtn {
+    background-color: white;
+    color: #1a73e8
+}
