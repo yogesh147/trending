@@ -3,3 +3,11 @@
     border-bottom-style: ridge;
     height: 61px;
 }
+
+.height-300{
+    height: 300px;
+}
+
+.pt-20{
+    padding-top: 20px;
+}
