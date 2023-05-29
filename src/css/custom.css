@@ -18,7 +18,8 @@
 
 .zoom {
     transition: transform .2s;
-    height: 280px;
+    height: 230px;
+    width: 80%;
 }
 
 .zoom:hover {
@@ -41,4 +42,8 @@
 .sticky {
     position: fixed;
     background: white;
+}
+
+.pd-4 {
+    padding: 4px;
 }
