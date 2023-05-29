@@ -4,6 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Tooltip from "./Tooltip";
 import "./Body.css";
 import '../css/custom.css';
+import mobile1 from "../images/mobile1.png";
+import mobile2 from "../images/mobile2.png";
+import mobile3 from "../images/mobile3.png";
+import mobile4 from "../images/mobile4.png";
 
 export default function Body() {
    const [isVisible, setVisible] = useState(true);
@@ -58,13 +62,38 @@ export default function Body() {
             </Col>
 
             <Col sm={12} md={8} lg={8} xl={8} xxl={8} xs={12}  >
-               <Row className="height-300">
+               <Row className="ht-300 mb-50 ">
 
-                  <Col sm={12} md={4} lg={4} xl={4} xxl={4} xs={12} style={{ borderStyle: "solid" }}>
-                  </Col>
                   <Col sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
+                     <div className="bg-light-black pd-1">
+                        <img src={mobile1} className='zoom' alt="Pixel 7a" />
+                        <h6 className="text-center">Pixel 7a</h6>
+                     </div>
                   </Col>
+
                   <Col sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
+                     <div className="bg-light-black pd-1">
+                        <img src={mobile2} className='zoom' alt="Pixel 7 Pro" />
+                        <h6 className="text-center">Pixel 7 Pro</h6>
+                     </div>
+                  </Col>
+
+                  <Col sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
+                     <div className="bg-light-black pd-1">
+                        <img src={mobile3} className='zoom' alt="Pixel 7" />
+                        <h6 className="text-center">Pixel 7</h6>
+                     </div>
+                  </Col>
+
+               </Row>
+
+               <Row className="ht-300">
+
+                  <Col sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
+                     <div className="bg-light-black pd-1">
+                        <img src={mobile4} className='zoom' alt="Pixel 6a" />
+                        <h6 className="text-center">Pixel 6a</h6>
+                     </div>
                   </Col>
 
                </Row>

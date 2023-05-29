@@ -4,10 +4,41 @@
     height: 61px;
 }
 
-.height-300{
+.ht-300 {
     height: 300px;
 }
 
-.pt-20{
+.pt-20 {
     padding-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.zoom {
+    transition: transform .2s;
+    height: 280px;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.bg-light-black {
+    background-color: #0000001f;
+    border-radius: 12px;
+}
+
+.pd-1 {
+    padding: 1px;
+}
+
+.sticky {
+    position: fixed;
+    background: white;
 }
