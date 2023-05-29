@@ -8,6 +8,7 @@ import Pixel7a from "../images/Pixel7a.png";
 import Pixel7Pro from "../images/Pixel7Pro.png";
 import Pixel7 from "../images/Pixel7.png";
 import Pixel6a from "../images/Pixel6a.png";
+import Pixel7aCase from "../images/Pixel7aCase.png";
 
 export default function Body() {
    const [isVisible, setVisible] = useState(true);
@@ -21,6 +22,17 @@ export default function Body() {
       setVisible((current) => !current);
    };
 
+   const mobiles = [
+      { id: 1, imgName: Pixel7a, name: "Pixel 7a" },
+      { id: 2, imgName: Pixel7Pro, name: "Pixel 7 Pro" },
+      { id: 3, imgName: Pixel7, name: "Pixel 7" },
+      { id: 4, imgName: Pixel6a, name: "Pixel 6a" }
+   ];
+
+   const accessories = [
+      { id: 1, imgName: Pixel7aCase, name: "Pixel 7a Case" },
+   ];
+
    return (
       <Container fluid>
          <Row>
@@ -31,7 +43,7 @@ export default function Body() {
                <div className="Body-Col green-color">Mobile Store</div>
             </Col>
          </Row>
-         <Row className="pt-3">
+         <Row className="pt-4">
             <Col sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
                <div className="text-center">
                <Tooltip content={mobileToolTip} direction="left">
@@ -62,42 +74,49 @@ export default function Body() {
                </Col>
 
                <Col sm={12} md={6} lg={6} xl={8} xxl={8} xs={12}  >
-                  <Row className="ht-300 mb-50">
-
-                     <Col className="pd-4" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
-                        <div className="bg-light-black pd-1">
-                           <img src={Pixel7a} className='zoom' alt="Pixel 7a" />
-                           <h6 className="text-center">Pixel 7a</h6>
-                        </div>
-                     </Col>
-
-                     <Col className="pd-4" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
-                        <div className="bg-light-black pd-1">
-                           <img src={Pixel7Pro} className='zoom' alt="Pixel 7 Pro" />
-                           <h6 className="text-center">Pixel 7 Pro</h6>
-                        </div>
-                     </Col>
-
-                     <Col className="pd-4" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
-                        <div className="bg-light-black pd-1">
-                           <img src={Pixel7} className='zoom' alt="Pixel 7" />
-                           <h6 className="text-center">Pixel 7</h6>
-                        </div>
-                     </Col>
-
+                  <Row className="ht-300">
+                     {
+                        mobiles.map(item => (
+                           <Col key={item.id} className="pd-4 text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
+                              <div className="bg-light-black pd-1 mt-28 mb-4">
+                                 <img src={item.imgName} className='zoom' alt={item.name} />
+                                 <h6>{item.name}</h6>
+                              </div>
+                           </Col>
+                        ))
+                     }
                   </Row>
                </Col>
+
                <Col sm={12} md={3} lg={3} xl={2} xxl={2} xs={12}>
                </Col>
 
-            </Row>) : (<Row className="ht-300">
+            </Row>) : (
+               <Row className="pt-20">
 
-               <Col sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
-                  <div className="bg-light-black pd-1">
-                     <img src={Pixel6a} className='zoom' alt="Pixel 6a" />
-                     <h6 className="text-center">Pixel 6a</h6>
-                  </div>
-               </Col> </Row>)}
+                  <Col sm={12} md={3} lg={3} xl={2} xxl={2} xs={12}>
+                  </Col>
+
+                  <Col sm={12} md={6} lg={6} xl={8} xxl={8} xs={12}  >
+                     <Row className="ht-300">
+                        {
+                           accessories.map(item => (
+                              <Col key={item.id} className="text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
+                                 <div className="bg-light-black mt-28 mb-4">
+                                    <img src={item.imgName} className='zoom' alt={item.name} />
+                                    <h6>{item.name}</h6>
+                                 </div>
+                              </Col>
+                           ))
+                        }
+                     </Row>
+                  </Col>
+
+                  <Col sm={12} md={3} lg={3} xl={2} xxl={2} xs={12}>
+                  </Col>
+
+               </Row>
+         )}
 
       </Container>
    );
