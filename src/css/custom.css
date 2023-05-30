@@ -55,3 +55,19 @@
 .mb-4 {
     margin-bottom: 4px;
 }
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 255, 0.123);
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}

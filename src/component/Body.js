@@ -74,7 +74,7 @@ export default function Body() {
                </Col>
 
                <Col sm={12} md={6} lg={6} xl={8} xxl={8} xs={12}  >
-                  <Row className="ht-300">
+                  <Row>
                      {
                         mobiles.map(item => (
                            <Col key={item.id} className="pd-4 text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
@@ -91,18 +91,20 @@ export default function Body() {
                <Col sm={12} md={3} lg={3} xl={2} xxl={2} xs={12}>
                </Col>
 
-            </Row>) : (
+            </Row>
+         
+            ) : (
                <Row className="pt-20">
 
                   <Col sm={12} md={3} lg={3} xl={2} xxl={2} xs={12}>
                   </Col>
 
                   <Col sm={12} md={6} lg={6} xl={8} xxl={8} xs={12}  >
-                     <Row className="ht-300">
+                     <Row className="ht-300 mb-50">
                         {
                            accessories.map(item => (
                               <Col key={item.id} className="text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
-                                 <div className="bg-light-black mt-28 mb-4">
+                                 <div className="bg-light-black mt-28 mb-4 pd-1">
                                     <img src={item.imgName} className='zoom' alt={item.name} />
                                     <h6>{item.name}</h6>
                                  </div>
