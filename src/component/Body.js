@@ -23,14 +23,14 @@ export default function Body() {
    };
 
    const mobiles = [
-      { id: 1, imgName: Pixel7a, name: "Pixel 7a" },
-      { id: 2, imgName: Pixel7Pro, name: "Pixel 7 Pro" },
-      { id: 3, imgName: Pixel7, name: "Pixel 7" },
-      { id: 4, imgName: Pixel6a, name: "Pixel 6a" }
+      { id: 1, imgName: Pixel7a, name: "Pixel 7a", href: "http://localhost:3000/" },
+      { id: 2, imgName: Pixel7Pro, name: "Pixel 7 Pro", href: "http://localhost:3000/" },
+      { id: 3, imgName: Pixel7, name: "Pixel 7", href: "http://localhost:3000/" },
+      { id: 4, imgName: Pixel6a, name: "Pixel 6a", href: "http://localhost:3000/" }
    ];
 
    const accessories = [
-      { id: 1, imgName: Pixel7aCase, name: "Pixel 7a Case" },
+      { id: 1, imgName: Pixel7aCase, name: "Pixel 7a Case", href: "http://localhost:3000/" },
    ];
 
    return (
@@ -79,7 +79,9 @@ export default function Body() {
                         mobiles.map(item => (
                            <Col key={item.id} className="pd-4 text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
                               <div className="bg-light-black pd-1 mt-28 mb-4">
-                                 <img src={item.imgName} className='zoom' alt={item.name} />
+                                 <a href={item.href} target="_self" rel="noreferrer">
+                                    <img src={item.imgName} className='zoom' alt={item.name} />
+                                 </a>
                                  <h6>{item.name}</h6>
                               </div>
                            </Col>
@@ -105,7 +107,9 @@ export default function Body() {
                            accessories.map(item => (
                               <Col key={item.id} className="text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
                                  <div className="bg-light-black mt-28 mb-4 pd-1">
-                                    <img src={item.imgName} className='zoom' alt={item.name} />
+                                    <a href={item.href} target="_self" rel="noreferrer">
+                                       <img src={item.imgName} className='zoom' alt={item.name} />
+                                    </a>
                                     <h6>{item.name}</h6>
                                  </div>
                               </Col>
