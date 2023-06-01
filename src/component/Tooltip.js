@@ -4,6 +4,7 @@ import "./Tooltip.css";
 const Tooltip = (props) => {
     let timeout;
     const [active, setActive] = useState(false);
+    const tooltipClassName =   props.className || "Tooltip-Wrapper" ;
 
     const showTip = () => {
         timeout = setTimeout(() => {
@@ -18,7 +19,7 @@ const Tooltip = (props) => {
 
     return (
         <div
-            className="Tooltip-Wrapper"
+            className={tooltipClassName}
             onMouseEnter={showTip}
             onMouseLeave={hideTip}
         >
