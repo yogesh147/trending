@@ -19,7 +19,6 @@
 .zoom {
     transition: transform .2s;
     height: 230px;
-    width: 80%;
 }
 
 .zoom:hover {
