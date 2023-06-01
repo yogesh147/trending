@@ -6,7 +6,7 @@ import '../css/custom.css';
 export default function Footer() {
 
    return (
-      <Container fluid className="mt-60">
+      <Container fluid className="mt-29p">
          <Row className="footer text-center">
             <Col sm={12} md={12} lg={12} xl={12} xxl={12} xs={12} >
                <NavLink to={"/about"} className="footer-link">

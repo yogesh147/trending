@@ -15,7 +15,7 @@ export default function Privacy() {
                     <Col sm={12} md={6} lg={6} xl={6} xxl={6} xs={12} >
                         <div className="footer-text">
                             <p>
-                                Mobile Gadgets Store (includes “I”,“us,” “we,” or “our”) is a portfolio of brands and 
+                                Mobile Gadgets Store (includes “I”,“us,” “we,” or “our”) is a portfolio of brands and
                                 digital platforms (such as mobile and/or TV applications) that connect people with
                                 information to help make some of life's most important decisions.
                             </p>
@@ -33,8 +33,8 @@ export default function Privacy() {
                             <p></p>
                             <p>
                                 In short, "I," "us," "we," or "our" never ever use any kind of personal information
-                                 or data without your consent. Sometimes we use your information only to save or
-                                 track gadgets that provide a better UI experience and ease. So, don't worry. 
+                                or data without your consent. Sometimes we use your information only to save or
+                                track gadgets that provide a better UI experience and ease. So, don't worry.
                             </p>
                         </div>
                     </Col>
