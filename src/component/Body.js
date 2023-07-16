@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Tooltip from "./Tooltip";
@@ -16,9 +16,22 @@ import realme10Pro5g from "../images/realme10Pro5g.webp";
 import oneplus from "../images/oneplus.webp";
 import boat550 from "../images/boat550.webp";
 import buy from "../images/buy.webp";
+import axios from "axios";
 
 export default function Body() {
+   const url = "http://localhost:8080/image/mysql.PNG";
    const [isVisible, setVisible] = useState(true);
+   const [data, setData] = useState([]);
+
+   useEffect(() => {
+
+      axios.get(url).then((response) => {
+         setData(response.data);
+       });
+
+   }, []);
+
+   console.log("data ::--->", data);
 
    const mobileToolTip = "Checkout latest mobiles";
    const accessoriesToolTip = "Checkout latest accessories";
