@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Tooltip from "./Tooltip";
@@ -16,9 +16,23 @@ import realme10Pro5g from "../images/realme10Pro5g.webp";
 import oneplus from "../images/oneplus.webp";
 import boat550 from "../images/boat550.webp";
 import buy from "../images/buy.webp";
+import axios from "axios";
 
 export default function Body() {
+   const url = "http://localhost:8080/image/iphone14ProMax.webp";
    const [isVisible, setVisible] = useState(true);
+   const [data, setData] = useState([]);
+
+   useEffect(() => {
+
+      axios.get(url, {responseType: "arraybuffer"}).then((response) => {
+         const base64String = btoa(String.fromCharCode(...new Uint8Array(response.data)));
+         setData(base64String);
+       });
+
+   }, []);
+
+ //  console.log("data ::--->", data);
 
    const mobileToolTip = "Checkout latest mobiles";
    const accessoriesToolTip = "Checkout latest accessories";
@@ -89,8 +103,10 @@ export default function Body() {
                </Col>
 
                <Col sm={12} md={6} lg={6} xl={8} xxl={8} xs={12}  >
+               <img src={`data:image/png;base64,${data}`} alt="buy" />
                   <Row>
                      {
+                      
                         mobiles.map((item, index) =>
                            <Col key={index} className="pd-4 text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
                               <div className="bg-light-black pd-1 mt-28 mb-4">
