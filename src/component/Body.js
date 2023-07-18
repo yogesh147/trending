@@ -11,7 +11,7 @@ import axios from "axios";
 export default function Body() {
    const url = "http://localhost:8080/image/";
    const [isVisible, setVisible] = useState(true);
-   const [data, setData] = useState([]);
+   const [data, setData] = useState("");
 
    const [mobiles] = useState([
       { id: 1, imageName: "Pixel7a.webp", name: "Pixel 7a", width: "80%", href: "https://amzn.to/3oFHoea", src: "" },
@@ -37,23 +37,29 @@ export default function Body() {
                const base64String = window.btoa(String.fromCharCode(...new Uint8Array(response.data)));
                if (base64String != null) {
                   setData('data:image/png;base64,' + base64String);
-                  mobiles[i].src = 'data:image/png;base64,' + base64String;
+                  if(data.length > 0){
+                     mobiles[i].src = 'data:image/png;base64,' + base64String;
+                  }
+              //    console.log("", mobiles[i].imageName, data.length);
                }
             });
       }
+
+   });  
+
+   useEffect(() => {
 
       for (let i = 0; i < accessories.length; i++) {
          axios.get(url + accessories[i].imageName, { responseType: "arraybuffer" })
             .then((response) => {
                const base64String = window.btoa(String.fromCharCode(...new Uint8Array(response.data)));
                if (base64String != null) {
-                  setData('data:image/png;base64,' + base64String);
                   accessories[i].src = 'data:image/png;base64,' + base64String;
                }
             });
       }
 
-   }, []);  
+   });  
 
    const mobileToolTip = "Checkout latest mobiles";
    const accessoriesToolTip = "Checkout latest accessories";
@@ -110,7 +116,7 @@ export default function Body() {
                   <Row>
                      {
                         mobiles.map((item, index) =>
-                           <Col key={index} className="pd-4 text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
+                           item.src && (<Col key={index} className="pd-4 text-center" sm={12} md={4} lg={4} xl={4} xxl={4} xs={12}>
                               <div className="bg-light-black pd-1 mt-28 mb-4">
                                  <a href={item.href} target="_blank" rel="noreferrer">
                                     <img src={item.src} className='zoom' width={item.width} alt={item.name} />
@@ -123,7 +129,7 @@ export default function Body() {
                                  </Tooltip>
 
                               </div>
-                           </Col>
+                           </Col>)
                         )
                      }
                   </Row>
