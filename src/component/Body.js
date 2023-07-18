@@ -25,14 +25,13 @@ export default function Body() {
 
    useEffect(() => {
 
-      axios.get(url, {
-         responseType: "arraybuffer"
-      }).then((response) => {
-         const base64String = btoa(String.fromCharCode(...new Uint8Array(response.data)));
-         setData(base64String);
-      });
+      axios.get(url, { responseType: "arraybuffer" })
+         .then((response) => {
+            const base64String = window.btoa(String.fromCharCode(...new Uint8Array(response.data)));
+            setData(base64String);
+         });
 
-   }, []);
+   }, []);  
 
    const mobileToolTip = "Checkout latest mobiles";
    const accessoriesToolTip = "Checkout latest accessories";
