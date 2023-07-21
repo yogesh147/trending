@@ -20,9 +20,7 @@ import oneplus from "../images/oneplus.webp";
 import boat550 from "../images/boat550.webp";
 
 export default function Body() {
-   // const url = "http://localhost:8080/image/";
    const [isVisible, setVisible] = useState(true);
-   // const [data, setData] = useState("");
 
    const [mobiles] = useState([
       { id: 1, imgName: Pixel7a, imageName: "Pixel7a.webp", name: "Pixel 7a", width: "80%", href: "https://amzn.to/3oFHoea", src: "" },
@@ -40,47 +38,6 @@ export default function Body() {
       { id: 101, imgName: Pixel7aCase, imageName: "Pixel7aCase.webp", name: "Pixel 7a Case", width: "80%", href: "https://amzn.to/3OPrd8x", src: "" },
       { id: 102, imgName: boat550, imageName: "Boat550.webp", name: "BoAt Rockerz 550", width: "80%", href: "https://amzn.to/3MCBySI", src: "" }
    ]);
-
- /*  useEffect(() => {
-
-      axios.get(url, { responseType: "arraybuffer" })
-         .then((response) => {
-            const base64String = window.btoa(String.fromCharCode(...new Uint8Array(response.data)));
-            setData(base64String);
-         });
-
-   }, []);  
-
-    useEffect(() => {
-      for (const element of mobiles) {
-         axios.get(url + element.imageName, { responseType: "arraybuffer" })
-            .then((response) => {
-               const base64String = window.btoa(String.fromCharCode(...new Uint8Array(response.data)));
-               if (base64String != null) {
-                  setData('data:image/png;base64,' + base64String);
-                  if(data.length > 0){
-                     element.src = 'data:image/png;base64,' + base64String;
-                  }
-                  console.log("", mobiles[i].imageName, data.length);
-               }
-            });
-      }
-
-   });  
-
-   useEffect(() => {
-
-      for (const element of accessories) {
-         axios.get(url + element.imageName, { responseType: "arraybuffer" })
-            .then((response) => {
-               const base64String = window.btoa(String.fromCharCode(...new Uint8Array(response.data)));
-               if (base64String != null) {
-                  element.src = 'data:image/png;base64,' + base64String;
-               }
-            });
-      }
-
-   });   */
 
    const mobileToolTip = "Checkout latest mobiles";
    const accessoriesToolTip = "Checkout latest accessories";
