@@ -5,7 +5,7 @@ import Tooltip from "./Tooltip";
 import "./Body.css";
 import '../css/custom.css';
 
-import buy from "../images/buy.webp";
+import buy from "../images/buy.ico";
 
 import Pixel7a from "../images/Pixel7a.webp";
 import Pixel7Pro from "../images/Pixel7Pro.webp";

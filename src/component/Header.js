@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/custom.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import black from "../images/black.webp";
+import black from "../images/black.ico";
 import logo from "../images/favicon.ico";
 
 
