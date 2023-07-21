@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Body from "./Body";
 import About from "./About";
 import ContactUs from "./ContactUs";
@@ -11,7 +11,7 @@ import TermsOfServices from "./TermsOfService";
 export default function AppRoute() {
    return (
       <>
-         <BrowserRouter>
+         <HashRouter>
             <Header />
             <Routes >
                <Route path="/" element={<Body />} />
@@ -22,7 +22,7 @@ export default function AppRoute() {
                <Route path="/terms-of-services" element={<TermsOfServices />} />
             </Routes>
             <Footer />
-         </BrowserRouter>
+         </HashRouter>
       </>
    );
 }
